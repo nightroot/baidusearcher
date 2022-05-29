@@ -176,24 +176,19 @@ def get_result(word, limit=10):
         save_progress(filename, page)  # 保存进度
         save_data(filename, result)  # 保存数据
         print(f'已收集数据 {str(len(result))} 条')
-        if len(result) % 1000 == 0:
-            print(f'已收集数据 {str(len(result))} 条')
         time.sleep(5)
     return result
 
 
 if __name__ == '__main__':
     search_list=[
-        '\"上海\" \"合作园区\"',
-        '\"江苏\" \"合作园区\"',
-        '\"安徽\" \"合作园区\"',
-        '\"浙江\" \"合作园区\"',
+        '\"一个搜索示例\"',
     ]
-    # for search in search_list:
-    #     get_result(search, 1000)
     for search in search_list:
-        data = load_data(search.replace('\"', '').replace(' ', '_'))
-        print(len(data))
+        get_result(search, 1000)
+    # for search in search_list:
+    #     data = load_data(search.replace('\"', '').replace(' ', '_'))
+    #     print(len(data))
         # for d in data:
             # print(d)
 #
